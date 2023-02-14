@@ -10,6 +10,12 @@
     <title>Discount</title>
     <script
         src="https://cdn.tailwindcss.com"></script>
+
+    <script
+        src="https://kit.fontawesome.com/88349b1000.js"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,7 +26,7 @@
             DOM
             practice day</h1>
     </header>
-    <main class="h-screen w-8/12 mx-auto">
+    <main class=" w-8/12 mx-auto">
         <!-- problem 1 -->
         <section
             class=" flex justify-center mt-12 bg-red-100 p-10 rounded-lg">
@@ -45,6 +51,8 @@
                 <h1 class="text-3xl mb-2">
                     Price: 2000
                 </h1>
+                <p class="mb-2">Coupon code:
+                    DICS30</p>
                 <input type="text" name=""
                     id="coupon-filed"
                     placeholder="Enter your coupon code"
@@ -58,9 +66,58 @@
                 </h2>
             </div>
         </section>
+
+        <!-- practice 3 -->
+        <section
+            class=" mt-12 mb-12 bg-red-100 p-10 rounded-lg border border-black">
+            <div class="grid grid-cols-3 gap-5">
+                <div>
+                    <button id="bold-btn"
+                        class="activ"><i
+                            class="fa-solid fa-bold"></i></button>
+                    <button id="italic-btn"><i
+                            class="fa-solid fa-italic ml-3"></i></button>
+                    <button id="underline-btn"> <i
+                            class="fa-solid fa-underline ml-3"></i></button>
+
+
+                </div>
+                <div>
+
+                    <button id="left-align-btn"><i
+                            class="fa-solid fa-align-left"></i></button>
+
+                    <button
+                        id="center-align-btn"><i
+                            class="fa-solid fa-align-center  ml-6"></i></button>
+
+                    <button id="right-align-btn">
+                        <i
+                            class="fa-solid fa-align-right  ml-6"></i></button>
+
+                    <button
+                        id="justify-align-btn"><i
+                            class="fa-solid fa-align-justify  ml-6"></i></button>
+                </div>
+                <div>
+                    <input type="number" name=""
+                        id="number-filed" min="1"
+                        max="100" value="16"
+                        class="p-2 rounded">
+                    <button class="font-bold ml-4"
+                        onclick="textCase()">aA</button>
+                    <input id="changetext"
+                        type="color" class="ml-4">
+                </div>
+            </div>
+            <hr class="border-black mt-4 mb-6">
+            <textarea name="" id="comment-box"
+                class="p-4"></textarea>
+        </section>
     </main>
     <script src="js/discount.js"></script>
     <script src="js/coupon.js"></script>
+    <script src="js/text-editor.js"></script>
 </body>
 
 </html>
