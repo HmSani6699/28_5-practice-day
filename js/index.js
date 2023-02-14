@@ -54,3 +54,23 @@ function fontSize(e) {
     textarea.style.fontSize = e.value + 'px';
 
 }
+
+function textCaseConvert(e) {
+    if (textarea.style.textTransform == 'uppercase') {
+        textarea.style.textTransform = 'lowercase';
+        e.classList.remove('active');
+    }
+    else {
+        textarea.style.textTransform = 'uppercase';
+        e.classList.add('active');
+    }
+}
+
+
+function textColor(e) {
+    textarea.style.color = e.value;
+}
+
+function removeTextareaValue() {
+    textarea.value = '';
+}

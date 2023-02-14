@@ -64,7 +64,7 @@
         </h1>
     </header>
     <section
-        class="bg-emerald-200 mt-12 mb-12 p-10 rounded-lg  w-10/12 mx-auto">
+        class="bg-emerald-200 mt-12 mb-12 p-10 rounded-lg  w-7/12 mx-auto">
         <div
             class="flex justify-between align-items-center">
             <div id="frist-box">
@@ -103,11 +103,12 @@
                     max="100" value="16"
                     class="px-2 rounded text-2xl w-3/12"
                     onchange="fontSize(this)">
-                <button
-                    class="font-bold ml-6">aA</button>
-                <input onchange="textColor()"
+                <button class="font-bold ml-6"
+                    onclick="textCaseConvert(this)">aA</button>
+                <input onchange="textColor(this)"
                     type="color" class="ml-6">
-                <button class="ml-6"><i
+                <button class="ml-6"
+                    onclick="removeTextareaValue()"><i
                         class="fa-solid fa-rotate-right text-2xl"></i></button>
             </div>
         </div>
