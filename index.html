@@ -7,117 +7,115 @@
         content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-    <title>Discount</title>
+    <title>Simple text editor</title>
+    <!-- tailwind css link -->
     <script
         src="https://cdn.tailwindcss.com"></script>
 
+    <!-- font awesome link -->
     <script
         src="https://kit.fontawesome.com/88349b1000.js"
         crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        button {
+            height: 40px;
+            width: 40px;
+        }
+
+        input,
+        textarea {
+            outline: none;
+        }
+
+        textarea {
+            height: 300px;
+        }
+
+        .active {
+            background-color: rgba(0, 0, 255, 0.493);
+            padding: 2px;
+            border-radius: 3px;
+            color: white;
+        }
+
+        #second-box button:focus {
+            background-color: rgba(0, 0, 255, 0.493);
+            padding: 2px;
+            border-radius: 3px;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-
     <header>
         <h1
             class="text-6xl text-center mt-6 font-medium">
-            DOM
-            practice day</h1>
+            Simple <span
+                class="text-amber-500">Text
+                Editor</span> with
+            javascript
+        </h1>
     </header>
-    <main class=" w-8/12 mx-auto">
-        <!-- problem 1 -->
-        <section
-            class=" flex justify-center mt-12 bg-red-100 p-10 rounded-lg">
-            <div class="">
-                <h1 class="text-3xl mb-2">
-                    Price:1000
-                </h1>
+    <section
+        class="bg-emerald-200 mt-12 mb-12 p-10 rounded-lg  w-10/12 mx-auto">
+        <div
+            class="flex justify-between align-items-center">
+            <div id="frist-box">
                 <button
-                    class="bg-amber-600 px-6 py-2 font-bold text-white rounded mb-2 hover:bg-amber-500"
-                    id="discount-btn">Apply</button>
-                <h2 class="text-2xl">All
-                    cose: <span
-                        id="discount-price"></span>
-                </h2>
-            </div>
-        </section>
-
-        <!-- problem 2 -->
-        <section
-            class=" flex justify-center mt-12 bg-red-100 p-10 rounded-lg">
-            <div class="">
-                <h1 class="text-3xl mb-2">
-                    Price: 2000
-                </h1>
-                <p class="mb-2">Coupon code:
-                    DICS30</p>
-                <input type="text" name=""
-                    id="coupon-filed"
-                    placeholder="Enter your coupon code"
-                    class="px-4 py-2">
+                    onclick="textBold(this)"><i
+                        class="fa-solid fa-bold text-2xl"></i></button>
+                <button onclick="textItalic(this)"
+                    class="ml-4"><i
+                        class="fa-solid fa-italic text-2xl "></i></button>
                 <button
-                    class="bg-amber-600 px-6 py-2 font-bold text-white rounded mb-2 hover:bg-amber-500"
-                    id="coupon-btn">Apply</button>
-                <h2 class="text-2xl">Please pay:
-                    <span
-                        id="discount-element"></span>
-                </h2>
+                    onclick="textUnderline(this)"
+                    class="ml-4">
+                    <i
+                        class="fa-solid fa-underline text-2xl "></i></button>
             </div>
-        </section>
+            <div id="second-box">
+                <button onclick="leftAlign()"
+                    class="ml-4"><i
+                        class="fa-solid fa-align-left text-2xl"></i></button>
 
-        <!-- practice 3 -->
-        <section
-            class=" mt-12 mb-12 bg-red-100 p-10 rounded-lg border border-black">
-            <div class="grid grid-cols-3 gap-5">
-                <div>
-                    <button id="bold-btn"
-                        class="activ"><i
-                            class="fa-solid fa-bold"></i></button>
-                    <button id="italic-btn"><i
-                            class="fa-solid fa-italic ml-3"></i></button>
-                    <button id="underline-btn"> <i
-                            class="fa-solid fa-underline ml-3"></i></button>
+                <button onclick="centerAlign()"
+                    class="ml-4"><i
+                        class="fa-solid fa-align-center text-2xl "></i></button>
 
+                <button onclick="rightAlign()"
+                    class="ml-4"><i
+                        class="fa-solid fa-align-right text-2xl "></i></button>
 
-                </div>
-                <div>
-
-                    <button id="left-align-btn"><i
-                            class="fa-solid fa-align-left"></i></button>
-
-                    <button
-                        id="center-align-btn"><i
-                            class="fa-solid fa-align-center  ml-6"></i></button>
-
-                    <button id="right-align-btn">
-                        <i
-                            class="fa-solid fa-align-right  ml-6"></i></button>
-
-                    <button
-                        id="justify-align-btn"><i
-                            class="fa-solid fa-align-justify  ml-6"></i></button>
-                </div>
-                <div>
-                    <input type="number" name=""
-                        id="number-filed" min="1"
-                        max="100" value="16"
-                        class="p-2 rounded">
-                    <button class="font-bold ml-4"
-                        onclick="textCase()">aA</button>
-                    <input id="changetext"
-                        type="color" class="ml-4">
-                </div>
+                <button onclick="justifyAlign()"
+                    class="ml-4"><i
+                        class="fa-solid fa-align-justify text-2xl  "></i></button>
             </div>
-            <hr class="border-black mt-4 mb-6">
-            <textarea name="" id="comment-box"
-                class="p-4"></textarea>
-        </section>
-    </main>
-    <script src="js/discount.js"></script>
-    <script src="js/coupon.js"></script>
-    <script src="js/text-editor.js"></script>
+            <div>
+                <input type="number"
+                    id="number-filed" min="1"
+                    max="100" value="16"
+                    class="px-2 rounded text-2xl w-3/12"
+                    onchange="fontSize(this)">
+                <button
+                    class="font-bold ml-6">aA</button>
+                <input onchange="textColor()"
+                    type="color" class="ml-6">
+                <button class="ml-6"><i
+                        class="fa-solid fa-rotate-right text-2xl"></i></button>
+            </div>
+        </div>
+        <hr class="border-black mt-4 mb-6">
+        <textarea id="comment-box"
+            class="p-4 w-full rounded "></textarea>
+    </section>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

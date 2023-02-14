@@ -3,11 +3,11 @@ function getCommentBox() {
     return commentElement
 }
 
-document.getElementById('bold-btn').addEventListener('click', function () {
+document.getElementById('bold-btn').addEventListener('click', function (event) {
     const commentElement = getCommentBox();
-
     if (commentElement.style.fontWeight == 'bold') {
         commentElement.style.fontWeight = 'normal';
+
     }
     else {
         commentElement.style.fontWeight = 'bold';
@@ -34,7 +34,6 @@ document.getElementById('underline-btn').addEventListener('click', function () {
     }
 
 })
-
 
 document.getElementById('left-align-btn').addEventListener('click', function () {
     const commentElement = getCommentBox();
@@ -68,12 +67,11 @@ document.getElementById('number-filed').addEventListener('change', function () {
 
 
 function textCase() {
-    const commentElement = getCommentBox();
-    if (commentElement.style.textTransform === 'uppercase') {
-        commentElement.style.textTransform = 'none';
+    if (getCommentBox().style.textTransform === 'uppercase') {
+        getCommentBox().style.textTransform = 'none';
     }
     else {
-        commentElement.style.textTransform = 'uppercase';
+        getCommentBox().style.textTransform = 'uppercase';
     }
 }
 
